@@ -51,28 +51,3 @@ void	Contact::PrintContactLine(size_t index) const
 	std::cout << std::setw(10) << format_string(this->_last_name) << '|';
 	std::cout << std::setw(10) << format_string(this->_nickname) << std::endl;
 }
-
-//std::string const &get_first_name() const
-//{
-//	return (this->first_name);
-//}
-//
-//std::string const &get_last_name() const;
-//{
-//	return (this->last_name);
-//}
-//
-//std::string const &get_nickname() const;
-//{
-//	return (this->nickname);
-//}
-//
-//std::string const &get_phone_number() const;
-//{
-//	return (this->phone_number);
-//}
-//
-//std::string const &get_secret() const;
-//{
-//	return (this->secret);
-//}
