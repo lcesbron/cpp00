@@ -6,11 +6,14 @@
 /*   By: lcesbron <lcesbron@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 22:25:30 by lcesbron          #+#    #+#             */
-/*   Updated: 2025/12/17 23:46:45 by lcesbron         ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 00:20:03 by lcesbron         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
 
 Contact::Contact() {}
 
@@ -23,27 +26,53 @@ void	Contact::CreateNewContact(std::string first_name, std::string last_name, st
 	this->_secret = secret;
 }
 
-std::string const &get_first_name() const
+void	Contact::PrintContact(void) const
 {
-	return (this->first_name);
+	std::cout << "First Name : " << this->_first_name << std::endl ;
+	std::cout << "Last Name : " << this->_last_name << std::endl ;
+	std::cout << "Nickname : " << this->_nickname << std::endl ;
+	std::cout << "Phone Number : " << this->_phone_number << std::endl ;
+	std::cout << "Darkest Secret : " << this->_secret << std::endl ;
 }
 
-std::string const &get_last_name() const;
+static std::string	format_string(std::string s)
 {
-	return (this->last_name);
+	if (s.size() > 10)
+	{
+		return (s.substr(0, 9) + ".");
+	}
+	return (s);
 }
 
-std::string const &get_nickname() const;
+void	Contact::PrintContactLine(size_t index) const
 {
-	return (this->nickname);
+	std::cout << std::setw(10) << index << '|';
+	std::cout << std::setw(10) << format_string(this->_first_name) << '|';
+	std::cout << std::setw(10) << format_string(this->_last_name) << '|';
+	std::cout << std::setw(10) << format_string(this->_nickname) << std::endl;
 }
 
-std::string const &get_phone_number() const;
-{
-	return (this->phone_number);
-}
-
-std::string const &get_secret() const;
-{
-	return (this->secret);
-}
+//std::string const &get_first_name() const
+//{
+//	return (this->first_name);
+//}
+//
+//std::string const &get_last_name() const;
+//{
+//	return (this->last_name);
+//}
+//
+//std::string const &get_nickname() const;
+//{
+//	return (this->nickname);
+//}
+//
+//std::string const &get_phone_number() const;
+//{
+//	return (this->phone_number);
+//}
+//
+//std::string const &get_secret() const;
+//{
+//	return (this->secret);
+//}

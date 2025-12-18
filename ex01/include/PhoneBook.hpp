@@ -6,7 +6,7 @@
 /*   By: lcesbron <lcesbron@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 21:37:43 by lcesbron          #+#    #+#             */
-/*   Updated: 2025/12/17 23:46:53 by lcesbron         ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 00:20:02 by lcesbron         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@
 # include "Contact.hpp"
 # include <string.h>
 
+# ifndef MAX_CONTACT
+#  define MAX_CONTACT 2
+# endif
+
 class	PhoneBook
 {
 	public:
 		PhoneBook();
-		void	add();
-		void	search();
+		int	add();
+		int	search() const;
 	private:
-		size_t	nb_contacts;
-		size_t	index;
-		Contact	contacts[8];
+		size_t	_nb_contacts;
+		size_t	_index;
+		Contact	_contacts[MAX_CONTACT];
 };
 
 #endif
