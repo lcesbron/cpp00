@@ -17,7 +17,7 @@
 # include <string.h>
 
 # ifndef MAX_CONTACT
-#  define MAX_CONTACT 2
+#  define MAX_CONTACT 8
 # endif
 
 class	PhoneBook
