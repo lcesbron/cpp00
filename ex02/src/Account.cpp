@@ -47,8 +47,7 @@ void	Account::_displayTimestamp(void)
 	char		s[16];
 
 	time = std::time(NULL);
-	s[15] = 0;
-	std::strftime(s, 15, "%Y%m%d_%H%M%S", std::localtime(&time));
+	std::strftime(s, 16, "%Y%m%d_%H%M%S", std::localtime(&time));
 	std::cout << '[' << s << "] ";
 }
 
@@ -79,7 +78,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 		++this->_totalNbWithdrawals;
 		std::cout << "withdrawal:" << withdrawal << ';';
 		std::cout << "amount:" << this->_amount << ';';
-		std::cout << "nb_withdrawals" << Account::_nbWithdrawals << std::endl;
+		std::cout << "nb_withdrawals:" << Account::_nbWithdrawals << std::endl;
 		return (true);
 	}
 	else
@@ -129,5 +128,5 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "accounts:" << Account::_nbAccounts << ';';
 	std::cout << "total:" << Account::_totalAmount << ';';
 	std::cout << "deposits:" << Account::_totalNbDeposits << ';';
-	std::cout << "witdrawals:" << Account::_totalNbWithdrawals << std::endl;
+	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 }
